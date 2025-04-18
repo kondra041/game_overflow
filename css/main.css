@@ -1,0 +1,341 @@
+:root {
+  --radius: 15px;
+  --padding: 10px 20px;
+}
+
+#timerBox {
+  width: 100px;
+  height: 100px;
+  display: none;
+  position: absolute;
+  margin-left: 20px;
+  position: absolute;
+  right: 25px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+}
+
+
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  background: linear-gradient(to top, #7aadff, #a1d9f3);
+
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+.author {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-size: 20px;
+}
+
+.questionBtn,
+.restartGameBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  width: 50px;
+  color: #000;
+  border-radius: 20px;
+  margin-right: 10px;
+  transition: .3s;
+  cursor: pointer;
+}
+
+.restartGameBtn {
+  background: #ff2828;
+  color: #fff;
+}
+
+.questionBtn:hover {
+  box-shadow: 0 0 8px 0px rgba(45, 45, 45, 0.2);
+
+}
+
+.raitingTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.raitingTable tr td:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.raitingTable tr td:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.raitingTable tr td {
+  padding: 10px;
+  color: #fff;
+}
+
+.raitingTable thead tr td {
+  background-color: #02daa8;
+  font-weight: 600;
+
+}
+
+.raitingTable tbody tr {
+  margin: 10px 0;
+}
+
+.raitingTable tbody tr td {
+  background-color: #efefef;
+  color: #000;
+
+}
+
+.raitingTable tbody tr.myCell td {
+  background-color: #d4ffd9 !important;
+  font-weight: 600;
+}
+
+.gameContainer .spanHeight {
+  font-weight: bold;
+}
+
+.flaskCont,
+.barrelCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.barrelCont {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.flask {
+  width: 40px;
+  height: 220px;
+  border: 2px solid #a4a4a4;
+  border-radius: 0 0 30px 30px;
+  position: relative;
+  margin: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: end;
+  overflow: hidden;
+  margin: 20px;
+  transition: .3s;
+  cursor: pointer;
+  animation: moveFlask 5s linear infinite;
+}
+
+.flask.abs {
+  position: absolute !important;
+}
+
+.flask:hover {
+  transform: scale(1.1);
+  /* Увеличение размера */
+}
+
+.flask.hovered {
+  border-color: #157aff;
+  /* Подсвечиваем рамку (необязательно) */
+}
+
+.hovered {
+  transform: scale(1.2);
+  /* Увеличение размера */
+}
+
+@keyframes moveRandom1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(150px, 100px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveRandom2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(-200px, -150px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveCircle {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(100px, 0) rotate(180deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes moveEllipse {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(120px, 80px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes myOrbit {
+  from { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
+}
+
+.liquid {
+  width: 100%;
+  /* Ширина жидкости равна ширине колбы */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: height 4s;
+}
+
+.liquid.red {
+  background-color: red;
+}
+
+.liquid.blue {
+  background-color: rgb(53, 138, 243);
+}
+
+.liquid.green {
+  background-color: rgb(30, 240, 198);
+}
+
+.liquid.purple {
+  background-color: rgb(204, 77, 255);
+}
+
+
+.gameContainer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* align-items: end; */
+  overflow: hidden;
+  height: calc(100% - 30px);
+}
+
+.game_content {
+  height: calc(100vh - 175px);
+}
+
+.btnGreen {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  background-color: #02daa8;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.btnRed {
+  margin-top: 15px;
+  padding: 10px 20px;
+  font-size: 20px;
+  color: white;
+  background-color: #da0202;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+.timer-circle {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+circle {
+  fill: none;
+  stroke-width: 10;
+}
+
+circle.background {
+  stroke: #e0e0e0;
+}
+
+circle.progress {
+  stroke: #3b82f6;
+  stroke-dasharray: 283;
+  /* Длина окружности круга с радиусом 45 (2 * Pi * 45) */
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.2s linear;
+}
+
+.timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+.taskTextContainer {
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 24px;
+  text-align: center;
+}
+
+.highlight {
+  animation: highlightEffect 3s ease-out forwards;
+}
+
+.notDrop {
+  cursor: no-drop;
+}
+
+@keyframes highlightEffect {
+  0% {
+    background-color: yellow;
+  }
+
+  100% {
+    background-color: transparent;
+  }
+}
+
+.barrelBox {
+  height: 300px;
+  width: 250px;
+  right: 0;
+  bottom: 10px;
+  background-image: url('../img/barrel.png');
+  background-position: center;
+  background-size: cover;
+  transition: .3s;
+}

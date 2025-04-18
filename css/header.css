@@ -1,0 +1,100 @@
+.header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    font-size: 20px;
+    color: #fff;
+}
+
+.game_name{
+    display: flex;
+    align-items: center;
+}
+
+.game_name .name{
+    margin-left: 10px;
+    font-size: 24px;
+    font-weight: semibold;
+}
+
+.user-info {
+    min-width: 250px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.user-info > i.arrow {
+    transition: .3s;
+}
+
+.user-info .user_box{
+    display: flex;
+    align-items: center;
+}
+
+.user-info .user_box > i{
+    margin-right: 10px;
+}
+
+.dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    top: 55px;
+    left: 0;
+    background-color: inherit;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: inherit;
+    border-radius: inherit;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s;
+}
+
+.user-info:hover .arrow {
+    transform: rotate(180deg);
+}
+
+
+.user-info:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible; 
+    transition: opacity 0.3s ease, visibility 0s 0s;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-weight: semibold;
+    font-size: 18px;
+    transition: .3s;
+}
+
+.dropdown-content a:hover {
+    color: #0662be;
+}
+
+.dropdown-content a i {
+    margin-right: 10px;
+}
+
+#firstLetterName{
+    height: inherit;
+    aspect-ratio: 1/1;
+}

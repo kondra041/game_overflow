@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Второй уровень</title>
+    <link rel="stylesheet" href="../css/first_level.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/modal.css">
+</head>
+
+<body>
+    <div class="content">
+        <div class="header">
+            <div class="game_name">
+                <div class="logo">
+                    <img src="../img/logo.png" alt="">
+                </div>
+                <div class="name">Переливайка</div>
+            </div>
+            <div style="text-align: center; font-size: 32px; color: #000; font-weight: bold;">
+                Уровень 2
+            </div>
+            <div class="right_side" style="display: flex;">
+                <div class="restartGameBtn" id="restartGameBtn">
+                    <i class='bx bx-sync'></i>
+                </div>
+                <div class="questionBtn" id="questionBtn">
+                    <i class='bx bx-question-mark'></i>
+                </div>
+                <div class="user-info" id="user_info">
+                    <div class="user_box">
+                        <i class='bx bx-user' style="font-size: 20px;"></i>
+                        <span id="LetterName"></span>
+                    </div>
+                    <i class='bx bx-chevron-up arrow'></i>
+
+                    <div class="dropdown-content">
+                        <a href="#" id="openModalRaiting">
+                            <i class='bx bxs-bar-chart-alt-2'></i>
+                            Рейтинг
+                        </a>
+                        <a href="#" id="logoutButton">
+                            <i class='bx bxs-door-open'></i>
+                            Выйти
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <!-- ТАЙМЕР -->
+
+        <div id="timerBox">
+            <svg class="timer-circle" viewBox="0 0 100 100">
+              <circle class="background" cx="50" cy="50" r="45"></circle>
+              <circle class="progress" cx="50" cy="50" r="45"></circle>
+            </svg>
+            <div class="timer-text" id="timerText">0 сек</div>
+          </div>
+
+          <a href="#" id="nextlvl" onclick="gameInstance.nextLevel(); gameInstance.reload();">Пропустить</a>
+
+        <!-- ВЫБОР сложности (Динамическое создание контента) -->
+
+       
+        <div class="game_content" id="gameContent">
+            <div class="taskTextContainer"></div>
+            <div class="gameContainer">
+                <div id="levelSelectContainer">
+                    <div style="text-align: center; font-size: 30px; font-weight: semibold;">
+                        Выберите тип сложности:
+                    </div>
+    
+                    <div class="cards">
+                        <div class="card" id="easyCard">
+                            <div class="img">
+                                <img src="../img/2_flask.png" alt="">
+                            </div>
+                            <div class="title">
+                                Легкий (35 сек.)
+                            </div>
+                        </div>
+    
+                        <div class="card" id="mediumCard">
+                            <div class="img">
+                                <img src="../img/3_flask.png" alt="">
+                            </div>
+                            <div class="title">
+                                Средний (25 сек.)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- МОДАЛЬНОЕ ОКНО -->
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="closeModalBtn" class="close-btn">&times;</span>
+            <div class="modal-header" id="modalHeader"></div>
+            <div class="modal_body" id="modalBody"></div>
+        </div>
+    </div>
+
+
+    <div class="author">
+        <strong>Автор курсовой работы:</strong><br>
+        Кондрюков Дмитрий <br>
+        5130903/20301
+    </div>
+
+    <script src="../js/modal.js"></script>
+    <script src="../js/game.js"></script>
+    <script src="../js/validatePlayer.js"></script>
+    <script src="../js/user_info.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/modalContent.js"></script>
+    <script src="../js/FlaskLiquid.js"></script>
+    <script src="../js/levels/second_level.js"></script>
+
+    <script>
+
+
+
+    </script>
+
+</body>
+
+</html>

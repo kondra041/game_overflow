@@ -1,0 +1,29 @@
+@import url('main.css');
+
+.cards{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 140px;
+}
+
+.card{
+    background-color: #fff;
+    border-radius: var(--radius);
+    text-align: center;
+    padding: 10px;
+    transition: .3s;
+    cursor: pointer;
+    width: 330px;
+    height: 360px;
+}
+
+.card:hover{
+    transform: scale(1.1);
+    box-shadow: 0 0 8px 0px rgba(45, 45, 45, 0.2);
+
+}
+
+.card img{ 
+    width: 100%;
+}
