@@ -5,8 +5,6 @@ const mediumCard = document.getElementById('mediumCard');
 
 var gameInstance = new Game();
 
-// Измените `setupEasyLevel` для добавления задач
-
 function getRandomHeight(height, num) {
     let remainingHeight = height; // Оставшаяся высота для распределения
     const heights = [];
