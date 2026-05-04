@@ -1,0 +1,34 @@
+name: Run LLM Generated Tests
+
+on:
+  push:
+    paths:
+      - 'src/test/java/generated/**'
+  pull_request:
+    paths:
+      - 'src/test/java/generated/**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Run only generated tests
+        run: mvn test -Dtest="generated.*"
+
+      - name: Upload test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-reports
+          path: target/surefire-reports/
